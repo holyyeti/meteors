@@ -18,3 +18,12 @@ class Player(CircleShape):
     def draw(self, screen):
         triangle = pygame.draw.polygon(screen, "white", self.triangle(), 2)
         return triangle
+    
+    def update(self, dt):
+        keys = pygame.key.get_pressed()
+        if keys[pygame.K_a]:
+            self.rotation = 90
+        if keys[pygame.K_d]:
+            self.rotation = -90
+        
+        pygame.Vector2(0, 1).rotate(self.rotation)

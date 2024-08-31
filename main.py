@@ -12,7 +12,8 @@ def main():
     p = Player(
         SCREEN_WIDTH / 2, 
         SCREEN_HEIGHT / 2,
-        PLAYER_RADIUS)
+        PLAYER_RADIUS
+    )
     
     while True:
         for event in pygame.event.get():
@@ -20,6 +21,7 @@ def main():
                 return
         screen.fill('#000000')
         p.draw(screen)
+        p.update(dt)
         pygame.display.flip()
         dt = clock.tick(60) / 1000
 
